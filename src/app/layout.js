@@ -1,5 +1,9 @@
 import { Inter } from "next/font/google";
+import React from "react";
 import "./globals.css";
+import Footer from "../../components/Footer"
+import Navbar from "../../components/Navbar";
+import { CrowdFundingProvider } from "../../context/CrowdFunding";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,8 +14,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <CrowdFundingProvider>
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+     
+      <body className={inter.className}>
+        
+         <Navbar/>
+        {children}
+        <Footer/>
+      </body>
+      
     </html>
+    </CrowdFundingProvider>
   );
 }
