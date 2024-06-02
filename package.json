@@ -14,6 +14,7 @@
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-router-dom": "^6.23.1",
     "web3modal": "^1.9.12"
   },
   "devDependencies": {
@@ -23,14 +24,17 @@
     "@nomiclabs/hardhat-solhint": "^3.0.0",
     "@openzeppelin/contracts": "^4.8.1",
     "@openzeppelin/contracts-upgradeable": "^4.8.0",
+    "autoprefixer": "^10.4.19",
     "dotenv": "^16.0.3",
     "ethers": "^5.7.2",
     "hardhat": "^2.12.6",
     "hardhat-deploy": "^0.11.22",
     "hardhat-gas-reporter": "^1.0.9",
+    "postcss": "^8.4.38",
     "prettier": "^2.8.2",
     "prettier-plugin-solidity": "^1.1.1",
-    "solidity-coverage": "^0.8.2"
+    "solidity-coverage": "^0.8.2",
+    "tailwindcss": "^3.4.3"
   },
   "overrides": {
     "@nomicfoundation/hardhat-chai-matchers": {

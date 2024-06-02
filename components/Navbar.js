@@ -10,7 +10,7 @@ export default function Navbar() {
     const {currentAccount,connectWallet} = useContext(CrowdFundingContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     
-    const menuList = ["White Paper","Project","Donation","Members"];
+    const menuList = ["Donate","My Campaigns","Create Campaign","Contact Us"];
 
   return (
     <div class = "backgroundMain">
@@ -26,7 +26,7 @@ export default function Navbar() {
                 >
                     <Logo/>
                     <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-                        Company
+                        <img src="/saathi-logo.jpg" height="40px" width="80px" alt="" />
 
                     </span>
 
@@ -36,7 +36,7 @@ export default function Navbar() {
                         return (
                             <li key={i+1}>
                                 <a 
-                                    href="/"
+                                    href={`#${el}`}
                                     aria-label="Our Product"
                                     title="Our Product"
                                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400  "
@@ -54,12 +54,12 @@ export default function Navbar() {
 
             </div>
 
-            {!currentAccount && (
+            {!currentAccount ? (
                 <ul className="flex items-center hidden space-x-8 lg:flex">
                     <li>
                         <button
                             onClick={()=>{console.log("hi");connectWallet()}}
-                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none background"
+                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md bg-[#7DCB9B]  focus:shadow-outline focus:outline-none"
                             aria-label="Sign up"
                             title="Sign up"
                         >
@@ -68,7 +68,16 @@ export default function Navbar() {
                     </li>
 
                 </ul>
-            )}
+            ):
+            <ul className="flex items-center hidden space-x-8 lg:flex">
+            <li>
+                <div className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md bg-[#7DCB9B]  focus:shadow-outline focus:outline-none">
+                Account: {currentAccount}
+                </div>
+            </li>
+
+        </ul>
+        }
             
             <div className="lg:hidden z-40">
                 <button

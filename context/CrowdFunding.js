@@ -15,6 +15,7 @@ export const CrowdFundingProvider = ({children}) => {
 
     const titleData = "CrowdFunding Contract";
     const [currentAccount, setCurrentAccount] = useState("");
+    const [isVisible,setIsVisible] = useState(true);
     
     const createCampaign = async (campaign) => {
         const {title, description, amount, deadline} = campaign;
@@ -172,6 +173,7 @@ export const CrowdFundingProvider = ({children}) => {
             donate,
             getDonations,
             connectWallet,
+            isVisible,setIsVisible
 
         }}
         >

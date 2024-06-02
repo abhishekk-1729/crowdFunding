@@ -1,13 +1,26 @@
 "use client";
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState , useRef } from 'react'
 import Hero from '../../components/Hero';
 import Card from '../../components/Card';
 import PopUp from '../../components/PopUp';
 import { CrowdFundingContext } from '../../context/CrowdFunding';
+import Pop from "../../components/Pop"
 
 
 
 export default function page() {
+
+
+  const dropdownRef = useRef(null);
+  const {isVisible,setIsVisible} = useContext(CrowdFundingContext);
+  
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsVisible(false);
+    }
+  };
+
+  document.addEventListener('mousedown', handleClickOutside);
 
   const {
             titleData,
@@ -39,14 +52,15 @@ export default function page() {
 
   return (
     <div>
-      <Hero titleData ={titleData} createCampaign = {createCampaign} />
-      <Card
+      {isVisible&&<Pop dropdownRef={dropdownRef} setIsVisible={setIsVisible} />}
+      <Hero id="Create Campaign" titleData ={titleData} createCampaign = {createCampaign} />
+      <Card id="Donate"
         title = "All listed Campaign"
         allcampaign = {allcampaign}
         setOpenModel = {setOpenModel}
         setDonate ={setDonateCampaign}
       />
-      <Card
+      <Card id="My Campaigns"
         title = "Your created Campaign"
         allcampaign = {usercampaign}
         setOpenModel = {setOpenModel}

@@ -4,13 +4,13 @@ import React from 'react'
 export default function Footer() {
 
 
-    const productList = ["Market", "ERC20 Token", "Donation"];
+    const productList = ["Pricing", "Reviews", "FAQs"];
     const contactList = [
-    "support@cryptoking.com",
-    "info@example. com",
+    "support@saathi.com",
+    "info@example.com",
     "Contact us",
     ];
-    const usefullLink = ["Home", "About Us", "Company Bio"];
+    const usefullLink = ["Home", "About Us", "Press and Media"];
   return (
     <footer className="text-center text-white backgroundMain lg:text-left">
         <div className="text-center mx-6 py-10 md:text-left">
@@ -19,16 +19,16 @@ export default function Footer() {
                 <div className="">
                     <h6 className="mb-4 flex items-center justify-center font-semibold uppercase
                     md:justify-start">
-                    Crypto King 
+                    Saathi
                     </h6>
                     <p>
-                        xyz xyz xyzvx 8989 8989 89898 898989 8989 
+                    Raise funds online for medical emergencies and social causes
                     </p>
                 </div>
 
                 <div className=''>
                     <h6 className='mb-4 flex justify-center font-semibold uppercase md:justify-start'>
-                        Products
+                        Resources
                     </h6>
                     {productList.map((el,i)=>{
                         return (
@@ -55,7 +55,7 @@ export default function Footer() {
 
                 <div className=''>
                     <h6 className='mb-4 flex justify-center font-semibold uppercase md:justify-start'>
-                        CONTACT
+                        Contact
                     </h6>
                     {contactList.map((el,i)=>{
                         return (
@@ -68,7 +68,7 @@ export default function Footer() {
             </div>
         </div>
         <div className='backgroundMain p-6 text-center'>
-            <span>xxxxxxxxxxxxxxx</span>
+            <span>@ copyright saathi.org</span>
         </div>
     </footer>
   )

@@ -13,6 +13,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+
+  
+
   return (
     <CrowdFundingProvider>
     <html lang="en">
@@ -20,8 +24,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         
          <Navbar/>
+         
         {children}
-        <Footer/>
+        <Footer id="Contact Us"/>
       </body>
       
     </html>

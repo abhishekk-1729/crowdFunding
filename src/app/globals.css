@@ -23,3 +23,8 @@
   bottom: -1.9rem;
   z-index: 3;
 }
+
+.login-dropdown{
+  position: absolute;
+
+}
