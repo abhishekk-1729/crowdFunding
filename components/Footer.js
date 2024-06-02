@@ -67,7 +67,7 @@ export default function Footer() {
                 </div>
             </div>
         </div>
-        <div className='backgroundMain p-6 text-center'>
+        <div className='backgroundMain p-6 text-center text-[#7DCB9B]'>
             <span>@ copyright saathi.org</span>
         </div>
     </footer>

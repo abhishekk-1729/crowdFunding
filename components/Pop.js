@@ -75,8 +75,9 @@ export default function PopUp({
                     {/* <Link to="/searchAI"> */}
                     <button
                       onClick={() => {
+                        // if (!currentAccount) {connectWallet;}
                         setIsVisible(false);
-                        if (currentAccount) connectWallet();
+                        
                       }}
                       className="rounded-md p-3 h-1/6 mt-2 rounded-xl p-4 text-l   bg-[#7DCB9B]"
                     >

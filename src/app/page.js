@@ -1,18 +1,18 @@
 "use client";
+import Image from "next/image";
 import React, { useContext, useEffect, useState , useRef } from 'react'
 import Hero from '../../components/Hero';
 import Card from '../../components/Card';
 import PopUp from '../../components/PopUp';
 import { CrowdFundingContext } from '../../context/CrowdFunding';
 import Pop from "../../components/Pop"
-
-
+import Navbar from '../../components/Navbar';
 
 export default function page() {
 
 
   const dropdownRef = useRef(null);
-  const {isVisible,setIsVisible} = useContext(CrowdFundingContext);
+  const {isVisible,setIsVisible,currentAccount} = useContext(CrowdFundingContext);
   
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -52,7 +52,8 @@ export default function page() {
 
   return (
     <div>
-      {isVisible&&<Pop dropdownRef={dropdownRef} setIsVisible={setIsVisible} />}
+               <Navbar/>
+      {(isVisible&&!currentAccount)&&<Pop dropdownRef={dropdownRef} setIsVisible={setIsVisible} />}
       <Hero id="Create Campaign" titleData ={titleData} createCampaign = {createCampaign} />
       <Card id="Donate"
         title = "All listed Campaign"

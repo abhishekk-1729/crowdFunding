@@ -4,6 +4,8 @@ import React from 'react'
 import Logo from "./Logo";
 import Menu from "./Menu";
 import { CrowdFundingContext } from "../context/CrowdFunding";
+import Link from "next/link";
+
 
 export default function Navbar() {
 
